@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start:watch": "nodemon",
+    "start:dev": "webpack --config webpack.config.js --watch",
     "prestart:prod": "tsc",
     "start:prod": "node dist/main.js",
     "test": "jest --config=jest.json",
@@ -59,8 +60,13 @@
     "extend": ">=3.0.2",
     "jest": "^25.5.3",
     "nodemon": "^1.19.4",
+    "run-script-webpack-plugin": "^0.1.1",
     "supertest": "^3.4.2",
     "ts-jest": "^25.4.0",
-    "ts-node": "^8.9.1"
+    "ts-loader": "^9.4.2",
+    "ts-node": "^8.9.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-node-externals": "^3.0.0"
   }
 }

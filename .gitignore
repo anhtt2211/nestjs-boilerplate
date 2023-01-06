@@ -24,3 +24,5 @@ dist/*
 .env.development
 
 app.yaml
+
+yarn.lock

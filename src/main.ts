@@ -3,6 +3,8 @@ import { ApplicationModule } from "./app.module";
 import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
 import { json, urlencoded } from "express";
 
+declare const module: any;
+
 async function bootstrap() {
   const appOptions = { cors: true };
   const app = await NestFactory.create(ApplicationModule, appOptions);
@@ -21,5 +23,10 @@ async function bootstrap() {
   SwaggerModule.setup("/docs", app, document);
 
   await app.listen(8000);
+
+  if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => app.close());
+  }
 }
 bootstrap();
