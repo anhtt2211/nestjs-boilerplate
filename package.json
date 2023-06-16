@@ -33,7 +33,7 @@
     "@nestjs/testing": "^7.0.5",
     "@nestjs/typeorm": "^7.0.0",
     "@nestjs/websockets": "^7.0.5",
-    "argon2": "^0.26.2",
+    "argon2": "^0.30.3",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.14.0",
     "crypto": "^1.0.1",
