@@ -22,5 +22,6 @@ dist/*
 
 .env
 .env.development
+.env.production
 
 app.yaml

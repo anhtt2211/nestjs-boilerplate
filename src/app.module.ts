@@ -11,7 +11,10 @@ import { MediaModule } from "./media/media.module";
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: `.env.${process.env.NODE_ENV}`,
+    }),
     TypeOrmModule.forRoot(),
     ArticleModule,
     UserModule,
