@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Inject } from "@nestjs/common";
 import { CommandHandler, ICommandHandler } from "@nestjs/cqrs";
 import { ClientProxy } from "@nestjs/microservices";
 
-import { USER_REPOSITORY, USER_RMQ_CLIENT } from "../../../../shared/configs";
+import { DiTokens, USER_RMQ_CLIENT } from "../../../../shared/configs";
 import { UserPort } from "../../../core";
 import { MessageCmd } from "../../../core/enums";
 import { IPayloadUserUpdated, UserRO } from "../../../core/interfaces";
@@ -14,7 +14,7 @@ export class UpdateUserCommandHandler
   implements ICommandHandler<UpdateUserCommand>
 {
   constructor(
-    @Inject(USER_REPOSITORY)
+    @Inject(DiTokens.UserRepository)
     private readonly userRepository: UserPort,
     @Inject(USER_RMQ_CLIENT)
     private readonly userRmqClient: ClientProxy,

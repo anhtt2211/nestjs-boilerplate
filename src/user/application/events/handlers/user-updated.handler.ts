@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Inject } from "@nestjs/common";
 import { IEventHandler } from "@nestjs/cqrs";
 import { EventsHandler } from "@nestjs/cqrs/dist/decorators/events-handler.decorator";
 
-import { USER_REPOSITORY } from "../../../../shared/configs";
+import { DiTokens } from "../../../../shared/configs";
 import { UserPort } from "../../../core";
 import { UserUpdatedEvent } from "../impl";
 
@@ -11,7 +11,7 @@ export class UserUpdatedEventHandler
   implements IEventHandler<UserUpdatedEvent>
 {
   constructor(
-    @Inject(USER_REPOSITORY)
+    @Inject(DiTokens.UserRepository)
     private readonly userRepository: UserPort
   ) {}
   async handle({ user }: UserUpdatedEvent) {

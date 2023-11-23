@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Inject } from "@nestjs/common";
 import { IQueryHandler, QueryHandler } from "@nestjs/cqrs";
 
-import { USER_REPOSITORY } from "../../../../shared/configs";
+import { DiTokens } from "../../../../shared/configs";
 import { RedisService } from "../../../../redis/redis.service";
 import { UserPort } from "../../../core";
 import { UserEntity } from "../../../core/entities/user.entity";
@@ -12,7 +12,7 @@ import { FindUserById } from "../impl";
 @QueryHandler(FindUserById)
 export class FindUserByIdHandler implements IQueryHandler<FindUserById> {
   constructor(
-    @Inject(USER_REPOSITORY)
+    @Inject(DiTokens.UserRepository)
     private readonly userRepository: UserPort,
 
     private readonly userService: UserService,

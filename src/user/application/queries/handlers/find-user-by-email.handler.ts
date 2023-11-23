@@ -5,14 +5,14 @@ import { RedisService } from "../../../../redis/redis.service";
 import { UserPort } from "../../../core";
 import { UserRO } from "../../../core/interfaces";
 import { FindUserByEmailQuery } from "../impl";
-import { USER_REPOSITORY } from "../../../../shared/configs";
+import { DiTokens } from "../../../../shared/configs";
 
 @QueryHandler(FindUserByEmailQuery)
 export class FindUserByEmailQueryHandler
   implements IQueryHandler<FindUserByEmailQuery>
 {
   constructor(
-    @Inject(USER_REPOSITORY)
+    @Inject(DiTokens.UserRepository)
     private readonly userRepository: UserPort,
 
     private readonly redisCacheService: RedisService

@@ -4,7 +4,7 @@ import { ClientProxy } from "@nestjs/microservices";
 import { validate } from "class-validator";
 import { getRepository } from "typeorm";
 
-import { USER_REPOSITORY, USER_RMQ_CLIENT } from "../../../../shared/configs";
+import { DiTokens, USER_RMQ_CLIENT } from "../../../../shared/configs";
 import { UserPort } from "../../../core";
 import { UserEntity } from "../../../core/entities";
 import { MessageCmd } from "../../../core/enums";
@@ -17,7 +17,7 @@ export class CreateUserCommandHandler
   implements ICommandHandler<CreateUserCommand>
 {
   constructor(
-    @Inject(USER_REPOSITORY)
+    @Inject(DiTokens.UserRepository)
     private readonly userRepository: UserPort,
     @Inject(USER_RMQ_CLIENT)
     private readonly userRmqClient: ClientProxy,

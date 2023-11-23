@@ -1,7 +1,7 @@
 import { Global, Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
 
-import { USER_REPOSITORY } from "../../shared/configs";
+import { DiTokens } from "../../shared/configs";
 import { UserEntity } from "../../user/core";
 import { UserRepository } from "./repositories";
 
@@ -10,10 +10,10 @@ import { UserRepository } from "./repositories";
   imports: [{ forwardRef: () => TypeOrmModule.forFeature([UserEntity]) }],
   providers: [
     {
-      provide: USER_REPOSITORY,
+      provide: DiTokens.UserRepository,
       useClass: UserRepository,
     },
   ],
-  exports: [USER_REPOSITORY],
+  exports: [DiTokens.UserRepository],
 })
 export class InfrastructureModule {}
