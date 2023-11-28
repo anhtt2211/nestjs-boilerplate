@@ -2,9 +2,9 @@ import { HttpException, Inject } from "@nestjs/common";
 import { IQueryHandler, QueryHandler } from "@nestjs/cqrs";
 import * as argon2 from "argon2";
 
-import { TIME_TO_LIVE } from "../../../../redis/redis.constant";
-import { RedisService } from "../../../../redis/redis.service";
-import { DiTokens } from "../../../../shared/configs";
+import { TIME_TO_LIVE } from "@redis/redis.constant";
+import { RedisService } from "@redis/redis.service";
+import { DiTokens } from "@shared/configs";
 import { UserEntity, UserPort } from "../../../core";
 import { LoginUserDto } from "../../../core/dto";
 import { UserRO } from "../../../core/interfaces";

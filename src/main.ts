@@ -7,7 +7,7 @@ import { json, urlencoded } from "express";
 import * as os from "os";
 
 import { ApplicationModule } from "./app.module";
-import { USER_QUEUE } from "./shared/configs";
+import { USER_QUEUE } from "@shared/configs";
 
 async function bootstrap() {
   if (cluster.isMaster) {

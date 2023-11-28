@@ -2,8 +2,8 @@ import { Body, Controller, Get, Post, Put, UsePipes } from "@nestjs/common";
 import { CommandBus, QueryBus } from "@nestjs/cqrs";
 import { ApiBearerAuth, ApiBody, ApiOperation, ApiTags } from "@nestjs/swagger";
 
-import { User } from "../../../shared/middleware/user.decorator";
-import { ValidationPipe } from "../../../shared/pipes/validation.pipe";
+import { User } from "@shared/middleware";
+import { ValidationPipe } from "@shared/pipes";
 import {
   CreateUserCommand,
   UpdateUserCommand,

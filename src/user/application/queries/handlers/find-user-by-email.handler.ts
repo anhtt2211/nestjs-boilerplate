@@ -1,11 +1,11 @@
 import { Inject } from "@nestjs/common";
 import { IQueryHandler, QueryHandler } from "@nestjs/cqrs";
 
-import { RedisService } from "../../../../redis/redis.service";
+import { RedisService } from "@redis/redis.service";
 import { UserPort } from "../../../core";
 import { UserRO } from "../../../core/interfaces";
 import { FindUserByEmailQuery } from "../impl";
-import { DiTokens } from "../../../../shared/configs";
+import { DiTokens } from "@shared/configs";
 
 @QueryHandler(FindUserByEmailQuery)
 export class FindUserByEmailQueryHandler

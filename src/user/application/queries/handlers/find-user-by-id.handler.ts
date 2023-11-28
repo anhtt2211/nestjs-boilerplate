@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Inject } from "@nestjs/common";
 import { IQueryHandler, QueryHandler } from "@nestjs/cqrs";
 
-import { DiTokens } from "../../../../shared/configs";
-import { RedisService } from "../../../../redis/redis.service";
+import { DiTokens } from "@shared/configs";
+import { RedisService } from "@redis/redis.service";
 import { UserPort } from "../../../core";
 import { UserEntity } from "../../../core/entities/user.entity";
 import { UserRO } from "../../../core/interfaces/user.interface";

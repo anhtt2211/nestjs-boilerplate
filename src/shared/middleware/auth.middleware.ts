@@ -6,9 +6,9 @@ import { IncomingHttpHeaders } from "http";
 import * as jwt from "jsonwebtoken";
 
 import { JWT_SECRET_KEY } from "../configs";
-import { RedisService } from "../../redis/redis.service";
-import { FindUserById } from "../../user/application/queries";
-import { UserData } from "../../user/core/interfaces/user.interface";
+import { RedisService } from "@redis/redis.service";
+import { FindUserById } from "@user/application/queries";
+import { UserData } from "@user/core/interfaces/user.interface";
 
 interface IRequestCustom extends Request {
   user: UserData;

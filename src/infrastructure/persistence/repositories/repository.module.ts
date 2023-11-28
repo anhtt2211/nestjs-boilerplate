@@ -1,9 +1,9 @@
 import { Global, Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
 
-import { DiTokens } from "../../shared/configs";
-import { UserEntity } from "../../user/core";
-import { UserRepository } from "./repositories";
+import { DiTokens } from "@shared/configs";
+import { UserEntity } from "@user/core";
+import { UserRepository } from ".";
 
 @Global()
 @Module({
@@ -16,4 +16,4 @@ import { UserRepository } from "./repositories";
   ],
   exports: [DiTokens.UserRepository],
 })
-export class InfrastructureModule {}
+export class RepositoryModule {}

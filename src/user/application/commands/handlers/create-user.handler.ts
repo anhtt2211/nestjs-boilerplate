@@ -4,7 +4,7 @@ import { ClientProxy } from "@nestjs/microservices";
 import { validate } from "class-validator";
 import { getRepository } from "typeorm";
 
-import { DiTokens, USER_RMQ_CLIENT } from "../../../../shared/configs";
+import { DiTokens, USER_RMQ_CLIENT } from "@shared/configs";
 import { UserPort } from "../../../core";
 import { UserEntity } from "../../../core/entities";
 import { MessageCmd } from "../../../core/enums";

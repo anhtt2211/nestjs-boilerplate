@@ -1,7 +1,7 @@
 import { Global, Module } from "@nestjs/common";
 import { ClientsModule, Transport } from "@nestjs/microservices";
 
-import { USER_QUEUE, USER_RMQ_CLIENT } from "../shared/configs";
+import { USER_QUEUE, USER_RMQ_CLIENT } from "@shared/configs";
 
 @Global()
 @Module({

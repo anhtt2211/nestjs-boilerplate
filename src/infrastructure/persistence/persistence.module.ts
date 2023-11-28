@@ -3,7 +3,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import * as dotenv from "dotenv";
 import { join } from "path";
 
-import { InfrastructureModule } from "./infrastructure/infrastructure.module";
+import { RepositoryModule } from "./repositories/repository.module";
 
 dotenv.config();
 
@@ -32,7 +32,7 @@ dotenv.config();
         },
       }),
     }),
-    InfrastructureModule,
+    RepositoryModule,
   ],
 })
-export class DatabaseModule {}
+export class PersistenceModule {}

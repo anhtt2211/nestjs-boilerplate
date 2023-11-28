@@ -15,10 +15,11 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@database/*": ["src/database/*"],
+      "@infrastructure/*": ["src/infrastructure/*"],
       "@media/*": ["src/media/*"],
-      "@rabbitmq/*": ["src/rabbitmq/*"],
-      "@redis/*": ["src/redis/*"],
+      "@rabbitmq/*": ["src/infrastructure/rabbitmq/*"],
+      "@redis/*": ["src/infrastructure/redis/*"],
+      "@persistence/*": ["src/infrastructure/persistence/*"],
       "@shared/*": ["src/shared/*"],
       "@user/*": ["src/user/*"]
     }
