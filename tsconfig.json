@@ -11,7 +11,17 @@
     "target": "es6",
     "sourceMap": true,
     "allowJs": true,
-    "outDir": "./dist"
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@database/*": ["src/database/*"],
+      "@media/*": ["src/media/*"],
+      "@rabbitmq/*": ["src/rabbitmq/*"],
+      "@redis/*": ["src/redis/*"],
+      "@shared/*": ["src/shared/*"],
+      "@user/*": ["src/user/*"]
+    }
   },
   "include": ["src/**/*", "dist/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
